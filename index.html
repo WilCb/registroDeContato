@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <title>Registro</title>
+
+</head>
+<body>
+    <section class="caixa_principal">
+        <h1>Facilitador de Registro</h1>
+        <form method="post" class="caixa__formulario" action="form">
+            <label>Nome:</label>
+            <input type="text" id="nome" class="nome" placeholder="Digite seu nome" required>
+            <label>Área: </label>
+            <select id="area">
+                <option value="Selecione">Selecione</option>
+                <option value="Ret. Premium">Ret. Premium</option>
+                <option value="Ret. Padrão">Ret. Padrão</option>
+            </select>
+            <div class="caixa__motivoContato">
+                <label>Motivo do contato: </label>
+                <select id="mcontato">
+                    <option value="Selecione">Selecione</option>
+                    <option class="cancelamento" value="Cancelamento devido valor, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido valor</option>
+                    <option class="cancelamento" value="Cancelamento por motivos pessoais, não aceita agendamento de O.S, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido Motivos pessoais</option>
+                    <option class="cancelamento" value="Cancelamento devido problema técnico, não aceita agendamento de O.S, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido Técnico</option>
+                    <option class="cancelamento" value="Cancelamento devido mudança ao exterior, não aceita troca de titularidade, troca de pact e nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido mundança ao exterior</option>
+                    <option class="cancelamento" value="Cancelamento devido falecimento do titular, não aceita troca de titularidade, troca de pact e nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, sem valor residual para pagamento, prazo de recolhimento dos pontos.">Canc. Devido Falec. Titular</option>
+                    <option value="Solicitação de desc, negociado..">Solicitação de desc, negociado..</option>
+                    <option value="Solicitação de desc, ciente que não tem disponível no momento.">Sem desc / S. Tarja</option>
+                    <option value="Solicitação de desc, ciente que não tem disponível no momento. Tarja verde.">Sem desc / C. Tarja</option>
+                </select>
+            </div>
+        </form>
+        <div class="caixa__btn">
+            <button class="btn" id="btn">Gerar registro</button>
+        </div>
+        <div class="rodape">
+            <label>Registro de Contato:</label>
+            <textarea class="campoTexto" name="" id="textarea" cols="30" rows="10"></textarea>
+            <button class="btn" id="limpar">Limpar</button>
+            <button class="btn" id="btnCopiar">Copiar</button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
