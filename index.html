@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/caixaPrincipal/caixaPrincipal.css">
+    <link rel="stylesheet" href="/assets/css/caixaForm/caixaForm.css">
+    <link rel="stylesheet" href="/assets/css/input/input.css">
+    <link rel="stylesheet" href="/assets/css/caixaMotivoContato/caixaMotivoContato.css">
+    <link rel="stylesheet" href="/assets/css/botao/btn.css">
+    <link rel="stylesheet" href="/assets/css/rodape/rodape.css">
+    <link rel="stylesheet" href="/assets/css/campoTexto/campoTexto.css">
 
     <title>Registro</title>
 
@@ -15,9 +23,9 @@
 <body>
     <section class="caixa_principal">
         <h1>Facilitador de Registro</h1>
-        <form method="post" class="caixa__formulario" action="form">
+        <form class="caixa__formulario" action="form">
             <label>Nome:</label>
-            <input type="text" id="nome" class="nome" placeholder="Digite seu nome" required>
+            <input type="text" id="nome" class="inputNome" placeholder="Digite seu nome" required>
             <label>Área: </label>
             <select id="area">
                 <option value="Selecione">Selecione</option>
@@ -36,19 +44,22 @@
                     <option value="Solicitação de desc, negociado..">Solicitação de desc, negociado..</option>
                     <option value="Solicitação de desc, ciente que não tem disponível no momento.">Sem desc / S. Tarja</option>
                     <option value="Solicitação de desc, ciente que não tem disponível no momento. Tarja verde.">Sem desc / C. Tarja</option>
+                    <option value="De acordo com a trans __ foi negociado desc ficando a mensalidade em R$ . Encaminhado a supervisão para correção do valor.">Desc prometido</option>
                 </select>
             </div>
         </form>
-        <div class="caixa__btn">
+        <div class="btn__registro">
             <button class="btn" id="btn">Gerar registro</button>
         </div>
         <div class="rodape">
             <label>Registro de Contato:</label>
             <textarea class="campoTexto" name="" id="textarea" cols="30" rows="10"></textarea>
-            <button class="btn" id="limpar">Limpar</button>
-            <button class="btn" id="btnCopiar">Copiar</button>
+            <div class="btns">
+                <button class="btn" id="limpar">Limpar</button>
+                <button class="btn" id="btnCopiar">Copiar</button>
+            </div>    
         </div>
     </section>
-    <script src="script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

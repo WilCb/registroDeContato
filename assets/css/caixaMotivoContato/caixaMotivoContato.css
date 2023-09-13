@@ -1,0 +1,22 @@
+
+.cancelamento {
+    background-color: #FF6347;
+}
+
+@media screen and (min-width: 0) {
+    .caixa__motivoContato {
+        padding: 2px;
+    }
+}
+
+@media screen and (min-width: 780px) {
+    .caixa__motivoContato {
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .caixa__motivoContato {
+        margin-top: 20px;
+    }
+}

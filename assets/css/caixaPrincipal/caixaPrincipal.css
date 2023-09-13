@@ -1,0 +1,41 @@
+.caixa_principal {
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid;
+    box-shadow: 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 0 5px 5px 5px;
+}
+
+@media screen and (min-width: 0) {
+    .caixa_principal {
+        margin: 20px;
+        padding: 0 5px 5px 5px;
+    }
+    .caixa_principal h1{
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 780px) {
+    .caixa_principal {
+        margin: 50px;
+        padding: 0 20px 20px 20px;
+    }
+    .caixa_principal h1{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .caixa_principal {
+        margin: 50px;
+        padding: 0 20px 20px 20px;
+    }
+    .caixa_principal h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}

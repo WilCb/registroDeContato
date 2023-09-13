@@ -9,7 +9,6 @@ input.focus()
 function executeCopiar() {
     let textarea = document.getElementById('textarea')
     textarea.select();
-    textarea.setSelectionRange(0, 9999999)
     document.execCommand("copy")
     alert("Copiado")
     textarea.value = "" 
@@ -19,6 +18,7 @@ function executeCopiar() {
 let textarea = document.getElementById('textarea')
 
 btn.addEventListener('click', () => {
+    textarea.value = ''
     let texto = `< ${nome.value} | ${area.value} | AlmMcz > ${mc.value}`
     textarea.value += texto
 
