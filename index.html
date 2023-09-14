@@ -25,7 +25,7 @@
         <h1>Facilitador de Registro</h1>
         <form class="caixa__formulario" action="form">
             <label>Nome:</label>
-            <input type="text" id="nome" class="inputNome" placeholder="Digite seu nome" required>
+            <input maxlength="15" type="text" id="nome" class="inputNome" placeholder="Digite seu nome" required>
             <label>Área: </label>
             <select id="area">
                 <option value="">Selecione</option>
@@ -54,7 +54,7 @@
         </div>
         <div class="rodape">
             <label>Registro de Contato:</label>
-            <textarea class="campoTexto" name="" id="textarea" cols="30" rows="10"></textarea>
+            <textarea maxlength="300" class="campoTexto" name="" id="textarea" cols="30" rows="10"></textarea>
             <div class="btns">
                 <button class="btn" id="limpar">Limpar</button>
                 <button class="btn" id="btnCopiar">Copiar</button>
