@@ -2,11 +2,13 @@
     align-items: center;
     border-radius: 20px;
     border: 1px solid;
-    box-shadow: 10px 10px 20px;
+    box-shadow: 10px 10px 15px;
     display: flex;
     flex-direction: column;
     margin: 20px;
     padding: 0 5px 5px 5px;
+    background-color: #000080;
+    color: white;
 }
 
 @media screen and (min-width: 0) {
