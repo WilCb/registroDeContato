@@ -1,26 +1,36 @@
 const input = document.getElementById('nome')
 const btn = document.getElementById('btn')
 const btnLimpar = document.getElementById('limpar')
+const recortar = document.getElementById('btnRecortar').addEventListener('click', executeRecortar)
 const copiar = document.getElementById('btnCopiar').addEventListener('click', executeCopiar)
-const area = document.getElementById('area')
 const mc = document.getElementById('mcontato')
+let textarea = document.getElementById('textarea')
 input.focus()
+
+function executeRecortar() {
+    let textarea = document.getElementById('textarea')
+    textarea.select();
+    document.execCommand('copy')
+    alert('Recortado')
+    textarea.value = ''
+}
 
 function executeCopiar() {
     let textarea = document.getElementById('textarea')
     textarea.select();
-    document.execCommand("copy")
-    alert("Copiado")
-    textarea.value = "" 
-    
+    document.execCommand('copy')
+    alert('Copiado')
 }
 
-let textarea = document.getElementById('textarea')
 
 btn.addEventListener('click', () => {
     textarea.value = ''
-    let texto = `< ${nome.value} | ${area.value} | AlmMcz > ${mc.value}`
-    textarea.value += texto
+    if(nome.value == '' || area.value == '') {
+        alert('Preencha todos os campos')
+    } else {
+        let texto = `< ${nome.value} | ${area.value} | AlmMcz > ${mc.value}`
+        textarea.value += texto
+    }
 
 })
 
@@ -28,8 +38,6 @@ btnLimpar.addEventListener('click', () => {
     textarea.value = ''
 })
 
-// btn.addEventListener('click', () => {
-//     let texto = document.documentElement
-//     texto.innerHTML = `<textarea
-//     >< ${nome.value} | ${area.value} | AlmMcz > ${mc.value}</textarea>`
-// })
+// window.onbeforeunload = () => {
+//     return confirm()
+// }
