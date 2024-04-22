@@ -36,8 +36,8 @@
         <div class="input__content">
             <div class="input__box">
                 <input type="text" class="form__input" id="nome">
-                <label class="placeholder" for="nome">Nome</label>
-                <span class="fs-6 text-danger" id="preencherNome"></span>
+                <label class="placeholder" title="Obrigatório" for="nome">Nome</label>
+                <span class="required" id="preencherNome"></span>
             </div>
 
             <div class="input__box">
@@ -47,14 +47,26 @@
                     <option value="Ret. Padrão">Ret. Padrão</option>
                 </select>
                 <label class="placeholder--select" for="floatingArea">Área</label>
-                <span class="fs-6 text-danger" id="preencherArea"></span>
+                <span class="required" id="preencherArea"></span>
             </div>
         </div>
 
         <div class="input__box">
             <select class="form__input form__select" id="motivoContato" aria-label="Floating label select example">
                 <option value="" selected>Selecione</option>
+
+                <!-- Desconto -->
                 <option value="Solicita desc, negociado">Solicita desc, negociado</option>
+                <option value="Solicitação de desc, ciente que não tem disponível no momento.">Sem desc / S. Tarja
+                </option>
+                <option value="Solicitação de desc, ciente que não tem disponível no momento. Tarja verde.">Sem desc /
+                    C. Tarja</option>
+                <option
+                    value="De acordo com a trans __ foi negociado desc ficando a mensalidade em R$ . Encaminhado a supervisão para correção do valor.">
+                    Desc prometido</option>
+                <!-- /Desconto -->
+
+                <!-- Opções de cancelamento -->
                 <option class="bg-danger"
                     value="Cancelamento devido valor, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
                     Canc. devido valor</option>
@@ -67,19 +79,23 @@
                 <option class="bg-danger"
                     value="Cancelamento devido problema técnico, não aceita agendamento de O.S, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
                     Canc. problem técnico</option>
+                <option class="cancelamento"
+                    value="Cancelamento devido mudança ao exterior, não aceita troca de titularidade, troca de pact e nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
+                    Canc. Devido mundança ao exterior</option>
+                <option class="cancelamento"
+                    value="Cancelamento devido falecimento do titular, não aceita troca de titularidade, troca de pact e nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, sem valor residual para pagamento, prazo de recolhimento dos pontos.">
+                    Canc. Devido Falec. Titular</option>
                 <option class="bg-danger"
                     value="Cancelamento devido mudança de endereço e SKY FIBRA não possibilitar reinstalação, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento do modem e multa em caso de não devolução.">
                     SKY FIBRA MUND. ENDER</option>
-                <option value="Solicitação de desc, ciente que não tem disponível no momento.">Sem desc / S. Tarja
-                </option>
-                <option value="Solicitação de desc, ciente que não tem disponível no momento. Tarja verde.">Sem desc /
-                    C. Tarja</option>
+                <!-- /Opções de cancelamento -->
+
             </select>
             <label class="placeholder--select" for="motivoContato">Registros de Contato</label>
         </div>
 
         <button id="btnRegistro" type="button" class="btn btn-primary">Gerar registro</button>
-
+        
         <div class="input__box">
             <textarea class="form__textarea" id="textAreaFlutuante"></textarea>
             <label class="placeholder--textarea" for="textAreaFlutuante">Registro de contato</label>
@@ -93,25 +109,9 @@
         </div>
         <span class="text-center" id="avisoSpan"></span>
     </form>
+
     <script src="./assets/js/placeholder.js"></script>
     <script src="./assets/js/script.js"></script>
-
-
-    <!-- <div class="caixa__motivoContato">
-                <label>Motivo do contato: </label>
-                <select id="mcontato">
-                    <option value="">Selecione</option>
-                    <option class="cancelamento" value="Cancelamento devido valor, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido valor</option>
-                    <option class="cancelamento" value="Cancelamento por motivos pessoais, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido Motivos pessoais</option>
-                    <option class="cancelamento" value="Cancelamento por não utilizar, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido não utilizar</option>
-                    <option class="cancelamento" value="Cancelamento devido problema técnico, não aceita agendamento de O.S, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido Técnico</option>
-                    <option class="cancelamento" value="Cancelamento devido mudança ao exterior, não aceita troca de titularidade, troca de pact e nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">Canc. Devido mundança ao exterior</option>
-                    <option class="cancelamento" value="Cancelamento devido falecimento do titular, não aceita troca de titularidade, troca de pact e nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, sem valor residual para pagamento, prazo de recolhimento dos pontos.">Canc. Devido Falec. Titular</option>
-                    <option value="Solicitação de desc, negociado..">Solicitação de desc, negociado..</option>
-                    
-                    <option value="De acordo com a trans __ foi negociado desc ficando a mensalidade em R$ . Encaminhado a supervisão para correção do valor.">Desc prometido</option>
-                </select>
-            </div> -->
 </body>
 
 </html>

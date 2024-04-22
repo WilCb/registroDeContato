@@ -7,10 +7,11 @@
     padding: 2.5rem;
 
     .input__content {
-        @include mixins.df-gap-fd-aa-jc(1.25rem);
+        @include mixins.df-gap-fd-aa-jc(0.5rem, $aa: center, $jc: space-between);
+        width: 340px;
 
         .input__box {
-            @include mixins.df-gap-fd-aa-jc(.25rem, $fd:column);
+            @include mixins.df-gap-fd-aa-jc(.25rem, $fd: column);
             position: relative;
 
             .form__input {
@@ -29,7 +30,7 @@
                 font-size: 1rem;
                 color: v.$color-placeholder-text;
                 position: absolute;
-                top: 35%;
+                top: 30%;
                 left: 5%;
             }
 
@@ -41,14 +42,19 @@
             .active {
                 @include mixins.placeholderActive;
             }
+
+            .required {
+                font-size: .875rem;
+            }
         }
     }
 
     .input__box {
         position: relative;
 
-        .form__select, .form__textarea {
-            width: 341px;
+        .form__select,
+        .form__textarea {
+            width: 340px;
             @include mixins.input;
         }
 
@@ -56,7 +62,8 @@
             height: 200px;
         }
 
-        .placeholder--select, .placeholder--textarea {
+        .placeholder--select,
+        .placeholder--textarea {
             font-size: 1rem;
             color: v.$color-placeholder-text;
             position: absolute;
@@ -72,7 +79,7 @@
 
     .btn {
         @include mixins.btn;
-        
+
         &:hover {
             background-color: v.$color-primary-btn;
         }
@@ -87,17 +94,18 @@
             &:hover:nth-child(1) {
                 background-color: v.$color-secondary-btn;
             }
-    
+
             &:hover:nth-child(2) {
                 background-color: v.$color-tertiary-btn;
             }
-    
+
             &:hover:nth-child(3) {
                 background-color: v.$color-quaternary-btn;
             }
         }
 
-        .btn:nth-child(1), .btn:nth-child(2) {
+        .btn:nth-child(1),
+        .btn:nth-child(2) {
             width: 100%;
         }
     }
