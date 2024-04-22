@@ -1,0 +1,104 @@
+@use '../abstract/variaveis' as v;
+@use '../abstract/mixins';
+
+.form {
+    @include mixins.df-gap-fd-aa-jc(.5rem, $fd: column, $jc: center, $aa: center);
+    background-color: v.$color-secondary-bg;
+    padding: 2.5rem;
+
+    .input__content {
+        @include mixins.df-gap-fd-aa-jc(1.25rem);
+
+        .input__box {
+            @include mixins.df-gap-fd-aa-jc(.25rem, $fd:column);
+            position: relative;
+
+            .form__input {
+                @include mixins.input;
+
+                &:focus~.placeholder {
+                    @include mixins.placeholderActive;
+                }
+
+                &:focus {
+                    border-bottom: 2px solid v.$color-placeholder-text;
+                }
+            }
+
+            .placeholder {
+                font-size: 1rem;
+                color: v.$color-placeholder-text;
+                position: absolute;
+                top: 35%;
+                left: 5%;
+            }
+
+            .placeholder--select {
+                @extend .placeholder;
+                @include mixins.placeholderActive;
+            }
+
+            .active {
+                @include mixins.placeholderActive;
+            }
+        }
+    }
+
+    .input__box {
+        position: relative;
+
+        .form__select, .form__textarea {
+            width: 341px;
+            @include mixins.input;
+        }
+
+        .form__textarea {
+            height: 200px;
+        }
+
+        .placeholder--select, .placeholder--textarea {
+            font-size: 1rem;
+            color: v.$color-placeholder-text;
+            position: absolute;
+            top: 35%;
+            left: 5%;
+            @include mixins.placeholderActive;
+        }
+
+        .placeholder--textarea {
+            top: 2%;
+        }
+    }
+
+    .btn {
+        @include mixins.btn;
+        
+        &:hover {
+            background-color: v.$color-primary-btn;
+        }
+
+    }
+
+    .btns {
+        @include mixins.df-gap-fd-aa-jc(1.25rem);
+        width: 360px;
+
+        .btn {
+            &:hover:nth-child(1) {
+                background-color: v.$color-secondary-btn;
+            }
+    
+            &:hover:nth-child(2) {
+                background-color: v.$color-tertiary-btn;
+            }
+    
+            &:hover:nth-child(3) {
+                background-color: v.$color-quaternary-btn;
+            }
+        }
+
+        .btn:nth-child(1), .btn:nth-child(2) {
+            width: 100%;
+        }
+    }
+}

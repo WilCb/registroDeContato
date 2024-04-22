@@ -1,47 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/caixaPrincipal/caixaPrincipal.css">
-    <link rel="stylesheet" href="./assets/css/caixaForm/caixaForm.css">
-    <link rel="stylesheet" href="./assets/css/input/input.css">
-    <link rel="stylesheet" href="./assets/css/caixaMotivoContato/caixaMotivoContato.css">
-    <link rel="stylesheet" href="./assets/css/botao/btn.css">
-    <link rel="stylesheet" href="./assets/css/rodape/rodape.css">
-    <link rel="stylesheet" href="./assets/css/campoTexto/campoTexto.css">
-    <link rel="stylesheet" href="./assets/css/cabecalho/cabecalho.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- /Fonte -->
 
-    <title>Registro</title>
+    <!-- Scss -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <!-- /Scss -->
+
+
+
+    <title>Registro de Contato</title>
 
 </head>
+
 <body>
-    <header class="cabecalho">
-        <h1 class="cabecalho__titulo">Facilitador de Registro</h1>
-        <nav class="navegacao">
-            <ul class="lista">
-                <li class="link__navegacao"><a href="./index.html">Home</a></li>
-                <li class="link__navegacao"><a href="./pages/priorizacao-os.html">Priorização de O.S</a></li>
+    <header class="header__container">
+        <h1 class="title">Facilitador de Registro</h1>
+        <nav class="nav__container">
+            <ul class="link">
+                <li class="link__navegation"><a href="./index.html">Home</a></li>
+                <li class="link__navegation"><a href="./pages/priorizacao-os.html">Priorização de O.S</a></li>
             </ul>
         </nav>
-
     </header>
-    <section class="caixa_principal">
-        <form class="caixa__formulario" action="form">
-            <label>Nome:</label>
-            <input maxlength="15" type="text" id="nome" class="inputNome" placeholder="Digite seu nome" required>
-            <label>Área: </label>
-            <select id="area">
-                <option value="">Selecione</option>
-                <option value="Ret. Premium">Ret. Premium</option>
-                <option value="Ret. Padrão">Ret. Padrão</option>
+    <form class="form">
+        <div class="input__content">
+            <div class="input__box">
+                <input type="text" class="form__input" id="nome">
+                <label class="placeholder" for="nome">Nome</label>
+                <span class="fs-6 text-danger" id="preencherNome"></span>
+            </div>
+
+            <div class="input__box">
+                <select class="form__input" id="floatingArea" aria-label="Floating label select example">
+                    <option value="" selected>Selecione</option>
+                    <option value="Ret. Premium">Ret. Premium</option>
+                    <option value="Ret. Padrão">Ret. Padrão</option>
+                </select>
+                <label class="placeholder--select" for="floatingArea">Área</label>
+                <span class="fs-6 text-danger" id="preencherArea"></span>
+            </div>
+        </div>
+
+        <div class="input__box">
+            <select class="form__input form__select" id="motivoContato" aria-label="Floating label select example">
+                <option value="" selected>Selecione</option>
+                <option value="Solicita desc, negociado">Solicita desc, negociado</option>
+                <option class="bg-danger"
+                    value="Cancelamento devido valor, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
+                    Canc. devido valor</option>
+                <option class="bg-danger"
+                    value="Cancelamento por motivos pessoais, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
+                    Canc. motivo pessoal</option>
+                <option class="bg-danger"
+                    value="Cancelamento por não utilizar, não aceita troca de pact, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
+                    Canc. não utiliza</option>
+                <option class="bg-danger"
+                    value="Cancelamento devido problema técnico, não aceita agendamento de O.S, nem desc, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento dos pontos e multa em caso de não devolução.">
+                    Canc. problem técnico</option>
+                <option class="bg-danger"
+                    value="Cancelamento devido mudança de endereço e SKY FIBRA não possibilitar reinstalação, canc de IMEDIATO, ciente de corte de sinal às 00h, valor residual gerado em 24h, prazo de recolhimento do modem e multa em caso de não devolução.">
+                    SKY FIBRA MUND. ENDER</option>
             </select>
-            <div class="caixa__motivoContato">
+            <label class="placeholder--select" for="motivoContato">Registros de Contato</label>
+        </div>
+
+        <button id="btnRegistro" type="button" class="btn btn-primary">Gerar registro</button>
+
+        <div class="input__box">
+            <textarea class="form__textarea" id="textAreaFlutuante"></textarea>
+            <label class="placeholder--textarea" for="textAreaFlutuante">Registro de contato</label>
+        </div>
+
+        <div class="input__box btns">
+            <button id="btnRecortar" type="button" disabled class="btn"><img src="./assets/img/Vector.svg" alt=""></button>
+            <button id="btnCopiar" type="button" disabled class="btn"><img src="./assets/img/Paste.svg" alt=""></button>
+            <button id="btnApagar" type="button" disabled class="btn"><img src="./assets/img/Close.svg" alt=""></button>
+        </div>
+        <span class="text-center" id="avisoSpan"></span>
+    </form>
+    <script src="./assets/js/placeholder.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+
+    <!-- <div class="caixa__motivoContato">
                 <label>Motivo do contato: </label>
                 <select id="mcontato">
                     <option value="">Selecione</option>
@@ -56,21 +107,7 @@
                     <option value="Solicitação de desc, ciente que não tem disponível no momento. Tarja verde.">Sem desc / C. Tarja</option>
                     <option value="De acordo com a trans __ foi negociado desc ficando a mensalidade em R$ . Encaminhado a supervisão para correção do valor.">Desc prometido</option>
                 </select>
-            </div>
-        </form>
-        <div class="btn__registro">
-            <button class="btn" id="btn">Gerar registro</button>
-        </div>
-        <div class="rodape">
-            <label>Registro de Contato:</label>
-            <textarea maxlength="300" class="campoTexto" name="" id="textarea" cols="30" rows="10"></textarea>
-            <div class="btns">
-                <button class="btn" id="limpar">Limpar</button>
-                <button class="btn" id="btnRecortar">Recortar</button>
-                <button class="btn" id="btnCopiar">Copiar</button>
-            </div>    
-        </div>
-    </section>
-    <script src="./assets/js/script.js"></script>
+            </div> -->
 </body>
+
 </html>

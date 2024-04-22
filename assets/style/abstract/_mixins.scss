@@ -1,0 +1,43 @@
+@use './variaveis' as v;
+
+@mixin df-gap-fd-aa-jc($gap, $fd: row, $aa: stretch, $jc: flex-start) {
+    display: flex;
+    gap: $gap;
+    flex-direction: $fd;
+    align-items: $aa;
+    justify-content: $jc;
+}
+
+@mixin fs-fc-fw($fs, $fc: v.$color-primary-text, $fw: 500) {
+    font-size: $fs;
+    color: v.$color-primary-text;
+    font-weight: $fw;
+}
+
+// Sobre o span(placeholder) quando o input esta em foco ou não se não estiver vazio
+@mixin placeholderActive {
+    font-size: 0.875rem;
+    left: 2%;
+    top: 8%;
+    transition: .5s;
+}
+
+// Estilização do Input
+@mixin input {
+    border: none;
+    border-bottom: 1px solid v.$color-placeholder-text;
+    border-radius: .25rem;
+    outline: none;
+    padding: 1.25rem 0.75rem;
+}
+
+// Estilização do botão
+@mixin btn {
+    background-color: transparent;
+    border: 1px solid v.$color-primary-btn;
+    color: v.$color-primary-text;
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 700;
+    padding: .75rem 1rem;
+}
