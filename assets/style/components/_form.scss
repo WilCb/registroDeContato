@@ -17,7 +17,7 @@
             .form__input {
                 @include mixins.input;
 
-                &:focus~.placeholder {
+                &:focus~.placeholder, &:not(:placeholder-shown)~.placeholder {
                     @include mixins.placeholderActive;
                 }
 

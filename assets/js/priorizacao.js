@@ -18,22 +18,22 @@ btnCopiar.addEventListener('click', () => {
 
 
 btnRegistro.addEventListener('click', () => {
-    if(formulario.value == ''){
+    if (formulario.value == '') {
         obrigatorio.innerHTML = `Obrigatório`
     } else {
         textarea.value = ''
         // Converte a data Icare para o formato dd/mm/aaaa
         let partesI = dataI.value.split("-");
         let dataIFormatada = partesI[2] + '/' + partesI[1] + '/' + partesI[0];
-    
+
         let partesC = dataA.value.split("-");
         let dataCFormatada = partesC[2] + '/' + partesC[1] + '/' + partesC[0];
-    
+
         const periodo = periodoM.checked ? 'Manhã' : 'Tarde'
-    
+
         // Escreve no TextArea do html
         let texto = `Priorização\nCódigo: ${cod.value}\nTier: ${tier.value}\nData do Icare: ${dataIFormatada}\nData acordada: ${dataCFormatada}\nPeríodo: ${periodo}\nOrdem de Serviço: ${os.value}\nProtocolo: ${protocol.value}\nTipo de Ordem de Serviço: ${tOS.value}`;
-    
+
         textarea.value += texto
     }
 })
@@ -43,6 +43,6 @@ btnLimpar.addEventListener('click', () => {
     textarea.value = ''
 })
 
-window.onbeforeunload = () => {
+aviso = window.onbeforeunload = () => {
     return confirm()
 }

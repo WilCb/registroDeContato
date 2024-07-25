@@ -116,7 +116,14 @@ table {
   outline: none;
   padding: 1.25rem 0.285rem 0.75rem;
 }
-.form .input__content .input__box .form__input:focus ~ .placeholder, .form .input__content .input__box .form__input:focus ~ .placeholder--select {
+.form .input__content .input__box .form__input:not(:-moz-placeholder-shown) ~ .placeholder, .form .input__content .input__box .form__input:not(:-moz-placeholder-shown) ~ .placeholder--select {
+  font-size: 0.875rem;
+  left: 2%;
+  top: 8%;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+.form .input__content .input__box .form__input:focus ~ .placeholder, .form .input__content .input__box .form__input:focus ~ .placeholder--select, .form .input__content .input__box .form__input:not(:placeholder-shown) ~ .placeholder, .form .input__content .input__box .form__input:not(:placeholder-shown) ~ .placeholder--select {
   font-size: 0.875rem;
   left: 2%;
   top: 8%;
